@@ -49,6 +49,6 @@ cachedmem_after=$(cat /proc/meminfo | grep "^Cached" | tr -s ' ' | cut -d ' ' -f
 # Output Summary
 echo -e "Free RAM after: $freemem_after MB\nCleared RAM: $(echo "$freemem_after - $freemem_before" | bc) MB"
 echo -e ""
-echo -e "Cached memory after: $cachedmem_after MB\nCleared caches: $(echo "$cachedmem_after - $cachedmem_before" | bc) MB"
+echo -e "Cached memory after: $cachedmem_after MB\nCleared caches: $(echo "$cachedmem_before - $cachedmem_after" | bc) MB"
 
 exit 0
